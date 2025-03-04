@@ -1,0 +1,661 @@
+{
+  "slices": [
+    {
+      "id": "3458764619462923900",
+      "status": "Created",
+      "title": "slice: Register Expense",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764619405397299",
+          "domain": "",
+          "modelContext": "Test App",
+          "context": "INTERNAL",
+          "slice": "slice: Register Expense",
+          "title": "Register Expense",
+          "fields": [
+            {
+              "name": "expenseId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": true,
+              "generated": false,
+              "idAttribute": true,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "documentId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "amount",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "expense",
+          "aggregateDependencies": [
+            "expense"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764619404971083",
+              "type": "OUTBOUND",
+              "title": "Expense registered",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764619405397309",
+              "type": "INBOUND",
+              "title": "screen",
+              "elementType": "SCREEN"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764619404971083",
+          "domain": "",
+          "modelContext": "Test App",
+          "context": "INTERNAL",
+          "slice": "slice: Register Expense",
+          "title": "Expense registered",
+          "fields": [
+            {
+              "name": "expenseId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "amount",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "documentId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "expense",
+          "aggregateDependencies": [
+            "expense"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764619405397453",
+              "type": "OUTBOUND",
+              "title": "expenses to process",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764619405397299",
+              "type": "INBOUND",
+              "title": "Register Expense",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [
+        {
+          "id": "3458764619405397309",
+          "groupId": "3458764619405397312",
+          "domain": "",
+          "modelContext": "Test App",
+          "context": "INTERNAL",
+          "slice": "slice: Register Expense",
+          "title": "screen",
+          "fields": [
+            {
+              "name": "expenseId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": true,
+              "generated": false,
+              "idAttribute": true,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "documentId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "amount",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "SCREEN",
+          "description": "",
+          "aggregate": "expense",
+          "aggregateDependencies": [
+            "expense"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764619405397299",
+              "type": "OUTBOUND",
+              "title": "Register Expense",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "processors": [],
+      "tables": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "expense"
+      ]
+    },
+    {
+      "id": "3458764619463005130",
+      "status": "Created",
+      "title": "slice: expenses to process",
+      "context": "",
+      "commands": [],
+      "events": [],
+      "readmodels": [
+        {
+          "id": "3458764619405397453",
+          "domain": "",
+          "modelContext": "Test App",
+          "context": "INTERNAL",
+          "slice": "slice: expenses to process",
+          "title": "expenses to process",
+          "fields": [
+            {
+              "name": "expenseId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "technicalAttribute": true
+            },
+            {
+              "name": "classification",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": true,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "technicalAttribute": false
+            },
+            {
+              "name": "status",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": true,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "technicalAttribute": false
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "expense",
+          "aggregateDependencies": [
+            "expense"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764619462595129",
+              "type": "OUTBOUND",
+              "title": "automation",
+              "elementType": "AUTOMATION"
+            },
+            {
+              "id": "3458764619404971083",
+              "type": "INBOUND",
+              "title": "Expense registered",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764619404971192",
+              "type": "INBOUND",
+              "title": "Expense classified",
+              "elementType": "EVENT"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [],
+      "processors": [],
+      "tables": [],
+      "specifications": [
+        {
+          "id": "3458764619464818921",
+          "sliceName": "slice: expenses to process",
+          "title": "spec: expenses to process",
+          "given": [
+            {
+              "title": "Expense registered",
+              "id": "3458764619464818928",
+              "index": 0,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "expenseId",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single"
+                },
+                {
+                  "name": "amount",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single"
+                },
+                {
+                  "name": "documentId",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "technicalAttribute": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single"
+                }
+              ],
+              "linkedId": "3458764619404971083",
+              "expectEmptyList": false
+            }
+          ],
+          "when": [],
+          "then": [
+            {
+              "title": "expenses to process",
+              "id": "3458764619464818922",
+              "index": 0,
+              "type": "SPEC_READMODEL",
+              "fields": [
+                {
+                  "name": "expenseId",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": false,
+                  "cardinality": "Single",
+                  "idAttribute": true,
+                  "technicalAttribute": true
+                },
+                {
+                  "name": "classification",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": true,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "technicalAttribute": false
+                },
+                {
+                  "name": "status",
+                  "type": "String",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "generated": true,
+                  "cardinality": "Single",
+                  "idAttribute": false,
+                  "technicalAttribute": false
+                }
+              ],
+              "linkedId": "3458764619405397453",
+              "expectEmptyList": false
+            }
+          ],
+          "comments": []
+        }
+      ],
+      "actors": [],
+      "aggregates": [
+        "expense"
+      ]
+    },
+    {
+      "id": "3458764619463083932",
+      "status": "Created",
+      "title": "slice: Classify",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764619462423974",
+          "domain": "",
+          "modelContext": "Test App",
+          "context": "INTERNAL",
+          "slice": "slice: Classify",
+          "title": "Classify",
+          "fields": [
+            {
+              "name": "expenseId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": true,
+              "generated": false,
+              "idAttribute": true,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "classification",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "expense",
+          "aggregateDependencies": [
+            "expense"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764619404971192",
+              "type": "OUTBOUND",
+              "title": "Expense classified",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764619462595129",
+              "type": "INBOUND",
+              "title": "automation",
+              "elementType": "AUTOMATION"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764619404971192",
+          "domain": "",
+          "modelContext": "Test App",
+          "context": "INTERNAL",
+          "slice": "slice: Classify",
+          "title": "Expense classified",
+          "fields": [
+            {
+              "name": "expenseId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": true,
+              "generated": false,
+              "idAttribute": true,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "classification",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "technicalAttribute": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "expense",
+          "aggregateDependencies": [
+            "expense"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764619405397453",
+              "type": "OUTBOUND",
+              "title": "expenses to process",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764619462423974",
+              "type": "INBOUND",
+              "title": "Classify",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [],
+      "processors": [
+        {
+          "id": "3458764619462595129",
+          "groupId": "3458764619462595134",
+          "domain": "",
+          "modelContext": "Test App",
+          "context": "INTERNAL",
+          "slice": "slice: Classify",
+          "title": "automation",
+          "fields": [
+            {
+              "name": "expenseId",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": true,
+              "technicalAttribute": true
+            },
+            {
+              "name": "classification",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "technicalAttribute": false
+            },
+            {
+              "name": "status",
+              "type": "String",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "generated": false,
+              "cardinality": "Single",
+              "idAttribute": false,
+              "technicalAttribute": false
+            }
+          ],
+          "type": "AUTOMATION",
+          "description": "",
+          "aggregate": "expense",
+          "aggregateDependencies": [
+            "expense"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764619462423974",
+              "type": "OUTBOUND",
+              "title": "Classify",
+              "elementType": "COMMAND"
+            },
+            {
+              "id": "3458764619405397453",
+              "type": "INBOUND",
+              "title": "expenses to process",
+              "elementType": "READMODEL"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "tables": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "expense"
+      ]
+    }
+  ],
+  "flows": [],
+  "aggregates": [
+    {
+      "id": "3458764619463446141",
+      "title": "expense",
+      "fields": [
+        {
+          "name": "expenseId",
+          "type": "String",
+          "idAttribute": true,
+          "cardinality": "Single",
+          "example": "",
+          "mapping": "",
+          "optional": false,
+          "technicalAttribute": false,
+          "generated": false
+        }
+      ],
+      "service": null,
+      "type": "AGGREGATE"
+    }
+  ],
+  "actors": [],
+  "context": "Test App",
+  "codeGen": {
+    "application": "Test app",
+    "domain": "",
+    "rootPackage": "de.nebulit",
+    "contextPackage": ""
+  },
+  "boardId": "uXjVIW2qnU0="
+}
